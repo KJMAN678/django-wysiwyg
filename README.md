@@ -6,6 +6,9 @@
 DJANGO_SECRET_KEY='xxx'
 ```
 
+http://127.0.0.1:8000/admin/
+http://127.0.0.1:8000/blog/preview/
+
 ```sh
 # uv で環境構築
 $ uv sync --dev
@@ -23,4 +26,10 @@ $ uv run manage.py createsuperuser --no-input
 
 # ローカルサーバー立上げ
 $ uv run manage.py runserver
+```
+
+```sh
+$ uv run manage.py makemigrations
+$ uv run ruff check . --fix
+$ uv run ruff format .
 ```

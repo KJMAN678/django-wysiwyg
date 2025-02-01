@@ -4,3 +4,4 @@ from tinymce.models import HTMLField
 
 class MyModel(models.Model):
     content = HTMLField()
+    css = models.TextField(default="")

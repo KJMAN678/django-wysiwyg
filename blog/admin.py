@@ -8,9 +8,8 @@ class MyModelAdmin(admin.ModelAdmin):
 
     def html_preview(self, obj):
         """HTMLをプレビューする機能"""
-        return mark_safe(obj.content)
-
-    html_preview.short_description = "HTMLプレビュー"
+        url = f"http://127.0.0.1:8000/blog/preview/{obj.id}/"
+        return mark_safe(f"<a href={url}>{url}<a>")
 
 
 admin.site.register(MyModel, MyModelAdmin)
