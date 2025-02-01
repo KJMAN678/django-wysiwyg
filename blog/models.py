@@ -1,5 +1,6 @@
-from django_prose_editor.fields import ProseEditorField
 from django.db import models
+from tinymce.models import HTMLField
 
-class Project(models.Model):
-    description = ProseEditorField()
+
+class MyModel(models.Model):
+    content = HTMLField()
