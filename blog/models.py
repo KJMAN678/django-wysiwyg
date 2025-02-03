@@ -1,7 +1,6 @@
 from django.db import models
-from tinymce.models import HTMLField
+from django_quill.fields import QuillField
 
 
 class MyModel(models.Model):
-    content = HTMLField()
-    css = models.TextField(default="")
+    content = QuillField()

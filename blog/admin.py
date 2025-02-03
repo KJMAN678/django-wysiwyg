@@ -1,15 +1,20 @@
 from django.contrib import admin
-from django.utils.safestring import mark_safe
 from blog.models import MyModel
+from django_quill.fields import QuillFormField
+from django.db import models
 
 
 class MyModelAdmin(admin.ModelAdmin):
-    list_display = ("id", "html_preview")
+    list_display = ("id",)
 
-    def html_preview(self, obj):
-        """HTMLをプレビューする機能"""
-        url = f"http://127.0.0.1:8000/blog/preview/{obj.id}/"
-        return mark_safe(f"<a href={url}>{url}<a>")
+    formfield_overrides = {
+        models.TextField: {"widget": QuillFormField()},
+    }
+
+    class Media:
+        css = {
+            "all": ("admin/css/style.css",)  # カスタムCSS適用
+        }
 
 
 admin.site.register(MyModel, MyModelAdmin)

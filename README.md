@@ -4,6 +4,9 @@
 - リポジトリ直下に .env ファイルを作成して下記のxxxの部分を更新して入力
 ```sh
 DJANGO_SECRET_KEY='xxx'
+DJANGO_SUPERUSER_PASSWORD="xxx"
+DJANGO_SUPERUSER_EMAIL="xxx@xxx.com"
+DJANGO_SUPERUSER_USERNAME="xxx"
 ```
 
 http://127.0.0.1:8000/admin/
@@ -15,11 +18,10 @@ $ uv sync --dev
 
 # migrate 実行
 $ uv run manage.py migrate
+$ uv run manage.py makemigrations
 
 # 下記のsuperuserの情報を更新して入力
-$ export DJANGO_SUPERUSER_PASSWORD="xxx"
-$ export DJANGO_SUPERUSER_EMAIL="xxx@xxx.com"
-$ export DJANGO_SUPERUSER_USERNAME="xxx"
+$ source .env
 
 # superuser を登録
 $ uv run manage.py createsuperuser --no-input

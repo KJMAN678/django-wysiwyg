@@ -1,7 +1,6 @@
 from blog import views
-from django.urls import path, include
+from django.urls import path
 
 urlpatterns = [
-    path("tinymce/", include("tinymce.urls")),
-    path("preview/<int:pk>/", views.preview, name="preview"),
+    path("form_view/", views.form_view, name="form_view"),
 ]
