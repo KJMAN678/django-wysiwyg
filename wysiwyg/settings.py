@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "blog",
-    "django_quill",
+    "tinymce",
 ]
 
 MIDDLEWARE = [
@@ -115,3 +115,16 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# TinyMCEのエディタ設定
+TINYMCE_DEFAULT_CONFIG = {
+    "plugins": "code preview",
+    "menubar": "code preview undo redo",
+    "toolbar": "code preview undo redo",
+    "height": "320px",
+    "width": "960px",
+}
+
+# 画像アップロード設定
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

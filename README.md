@@ -10,7 +10,6 @@ DJANGO_SUPERUSER_USERNAME="xxx"
 ```
 
 http://127.0.0.1:8000/admin/
-http://127.0.0.1:8000/blog/preview/
 
 ```sh
 # uv で環境構築

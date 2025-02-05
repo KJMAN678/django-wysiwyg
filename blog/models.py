@@ -1,6 +1,10 @@
 from django.db import models
-from django_quill.fields import QuillField
+from tinymce.models import HTMLField
 
 
 class MyModel(models.Model):
-    content = QuillField()
+    content = HTMLField()
+
+
+class MyImage(models.Model):
+    image = models.ImageField(upload_to="images/", blank=True, null=True)
